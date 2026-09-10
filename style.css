@@ -1,202 +1,1123 @@
 :root {
+
     --color-principal: #E88B18;
+
     --color-botones: #E88B18;
+
     --color-fondo: #09121F;
+
     --color-texto: #FFFFFF;
+
 }
+
+
+
+/* ==============================
+   GENERAL
+============================== */
 
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
+
+[hidden] {
+    display: none !important;
 }
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color:
+        var(--color-fondo);
+
+    color:
+        var(--color-texto);
+
+}
+
+
+button,
+a {
+
+    font-family: inherit;
+
+}
+
 
 .contenedor {
+
     width: 100%;
+
     max-width: 500px;
+
     margin: 0 auto;
+
     padding: 30px 20px;
+
 }
+
+
+
+/* ==============================
+   HEADER
+============================== */
 
 header {
+
     text-align: center;
+
     padding: 20px 0 30px;
+
 }
+
+
+
+/* ==============================
+   LOGO
+============================== */
 
 .logo img {
+
     width: 120px;
+
     height: 120px;
+
     object-fit: cover;
+
     border-radius: 50%;
+
     margin-bottom: 10px;
+
 }
+
+
+
+/* ==============================
+   TÍTULO
+============================== */
 
 h1 {
+
     margin: 0;
+
     font-size: 30px;
-    color: var(--color-principal);
+
+    color:
+        var(--color-principal);
+
 }
 
-header p {
+
+header > p {
+
     max-width: 380px;
+
     margin: 10px auto 0;
-    color: rgba(255, 255, 255, 0.85);
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
     font-size: 15px;
+
     line-height: 1.6;
+
     font-weight: 400;
+
 }
+
+
+
+/* ==============================
+   ESTADO ABIERTO / CERRADO
+============================== */
 
 #estado-negocio {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 8px;
 
     font-size: 13px;
+
     font-weight: 600;
 
     margin: 8px 0 18px;
+
     padding: 7px 12px;
 
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.06);
+
+    background-color:
+        rgba(255, 255, 255, 0.06);
+
 }
+
 
 #estado-negocio::before {
+
     content: "";
+
     width: 9px;
+
     height: 9px;
+
     border-radius: 50%;
+
     display: inline-block;
+
 }
+
 
 #estado-negocio.abierto {
+
     color: #65C97A;
+
 }
+
 
 #estado-negocio.abierto::before {
+
     background-color: #65C97A;
 
-    animation: pulsoEstado 1.8s infinite;
+    animation:
+        pulsoEstado
+        1.8s
+        infinite;
+
 }
+
 
 #estado-negocio.cerrado {
-    color: var(--color-principal);
+
+    color:
+        var(--color-principal);
+
 }
+
 
 #estado-negocio.cerrado::before {
-    background-color: var(--color-principal);
+
+    background-color:
+        var(--color-principal);
+
 }
+
+
+
+/* ==============================
+   TÍTULOS DE SECCIÓN
+============================== */
+
+#seccion-horarios h2,
+#seccion-servicios h2 {
+
+    margin: 0 0 14px;
+
+    font-size: 20px;
+
+    color:
+        var(--color-principal);
+
+    text-align: center;
+
+}
+
+
+
+/* ==============================
+   HORARIOS
+============================== */
+
+#seccion-horarios {
+
+    margin: 18px auto 20px;
+
+    max-width: 400px;
+
+}
+
 
 #horario-negocio {
-    margin: 18px auto 20px;
+
+    margin: 0 auto;
+
     padding: 15px 20px;
+
     max-width: 360px;
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(232, 139, 24, 0.25);
+
+    background-color:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid
+        rgba(232, 139, 24, 0.25);
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--color-principal) 25%,
+            transparent
+        );
+
     border-radius: 15px;
+
 }
+
 
 #horario-negocio p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    display: grid;
+
+    grid-template-columns:
+        105px 145px;
+
+    justify-content: center;
+
+    column-gap: 8px;
+
     margin: 7px 0;
+
     font-size: 14px;
-    color: var(--color-texto);
+
+    color:
+        var(--color-texto);
+
 }
+
 
 #horario-negocio strong {
-    color: var(--color-principal);
+
+    text-align: right;
+
+    color:
+        var(--color-principal);
+
 }
+
+
+#horario-negocio span {
+
+    text-align: left;
+
+}
+
+
+
+/* ==============================
+   SERVICIOS
+============================== */
 
 #seccion-servicios {
+
     margin: 28px auto 10px;
+
     max-width: 400px;
+
 }
 
-#seccion-servicios h2 {
-    margin: 0 0 14px;
-    font-size: 20px;
-    color: var(--color-principal);
-    text-align: center;
-}
 
 #lista-servicios {
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
     gap: 12px;
+
 }
 
+
 .servicio {
+
+    appearance: none;
+
+    border:
+        1px solid
+        rgba(232, 139, 24, 0.25);
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--color-principal) 25%,
+            transparent
+        );
+
     display: flex;
+
     align-items: center;
-    gap: 10px;
 
-    padding: 13px 14px;
+    justify-content:
+        space-between;
 
-    background-color: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(232, 139, 24, 0.25);
+    gap: 8px;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 12px 13px;
+
+    background-color:
+        rgba(255, 255, 255, 0.07);
+
     border-radius: 14px;
 
-    color: var(--color-texto);
+    color:
+        var(--color-texto);
+
     font-size: 14px;
+
     font-weight: 600;
+
+    cursor: pointer;
+
+    text-align: left;
 
     transition:
         transform 0.2s ease,
         background-color 0.2s ease,
         border-color 0.2s ease;
+
 }
 
-.servicio i {
-    color: var(--color-principal);
-    font-size: 15px;
+
+.servicio-contenido {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
 }
+
+
+.servicio-contenido > i {
+
+    color:
+        var(--color-principal);
+
+    font-size: 15px;
+
+    width: 18px;
+
+    text-align: center;
+
+    flex-shrink: 0;
+
+}
+
+
+.servicio-flecha {
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 11px;
+
+    flex-shrink: 0;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+
+}
+
 
 .servicio:hover {
-    transform: translateY(-2px);
-    background-color: rgba(232, 139, 24, 0.10);
-    border-color: var(--color-principal);
+
+    transform:
+        translateY(-2px);
+
+    background-color:
+        rgba(232, 139, 24, 0.10);
+
+    background-color:
+        color-mix(
+            in srgb,
+            var(--color-principal) 10%,
+            transparent
+        );
+
+    border-color:
+        var(--color-principal);
+
 }
 
-#imagen-negocio {
-    width: 100%;
-    max-width: 400px;
-    height: 250px;
-    object-fit: cover;
 
-    border: 1px solid rgba(232, 139, 24, 0.25);
+.servicio:active {
+
+    transform:
+        scale(0.98);
+
+}
+
+
+.servicio.activo {
+
+    background-color:
+        rgba(232, 139, 24, 0.12);
+
+    background-color:
+        color-mix(
+            in srgb,
+            var(--color-principal) 12%,
+            transparent
+        );
+
+    border-color:
+        var(--color-principal);
+
+}
+
+
+.servicio.activo
+.servicio-flecha {
+
+    transform:
+        rotate(180deg);
+
+    color:
+        var(--color-principal);
+
+}
+
+
+
+/* ==============================
+   DETALLE DEL SERVICIO
+============================== */
+
+.detalle-desplegable {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(-5px);
+
+    margin-top: 0;
+
+    padding:
+        0 16px;
+
+    border:
+        0 solid
+        rgba(232, 139, 24, 0.25);
+
+    border-radius: 14px;
+
+    background-color:
+        rgba(255, 255, 255, 0.05);
+
+    text-align: left;
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        margin 0.25s ease,
+        padding 0.25s ease;
+
+}
+
+
+.detalle-desplegable.visible {
+
+    max-height: 260px;
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    margin-top: 12px;
+
+    padding:
+        14px 16px;
+
+    border-width: 1px;
+
+}
+
+
+.detalle-desplegable h3 {
+
+    margin:
+        0 0 6px;
+
+    color:
+        var(--color-principal);
+
+    font-size: 15px;
+
+}
+
+
+.detalle-desplegable p {
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 13.5px;
+
+    line-height: 1.55;
+
+}
+
+
+
+/* ==============================
+   BOTÓN PROMOCIÓN
+============================== */
+
+.boton-promocion {
+
+    appearance: none;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 13px 15px;
+
+    border:
+        1px solid
+        var(--color-principal);
+
+    border-radius: 14px;
+
+    background-color:
+        rgba(232, 139, 24, 0.08);
+
+    background-color:
+        color-mix(
+            in srgb,
+            var(--color-principal) 8%,
+            transparent
+        );
+
+    color:
+        var(--color-principal);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+
+}
+
+
+.promocion-contenido {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.promocion-flecha {
+
+    font-size: 11px;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.boton-promocion:hover {
+
+    background-color:
+        rgba(232, 139, 24, 0.15);
+
+    background-color:
+        color-mix(
+            in srgb,
+            var(--color-principal) 15%,
+            transparent
+        );
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.boton-promocion.activo
+.promocion-flecha {
+
+    transform:
+        rotate(180deg);
+
+}
+
+
+
+/* ==============================
+   DETALLE PROMOCIÓN
+============================== */
+
+.detalle-promocion {
+
+    max-height: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    transform:
+        translateY(-5px);
+
+    margin-top: 0;
+
+    padding:
+        0 16px;
+
+    text-align: left;
+
+    border:
+        0 solid
+        rgba(232, 139, 24, 0.25);
+
+    border-radius: 14px;
+
+    background-color:
+        rgba(255, 255, 255, 0.06);
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        margin 0.25s ease,
+        padding 0.25s ease;
+
+}
+
+
+.detalle-promocion.visible {
+
+    max-height: 350px;
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    margin-top: 10px;
+
+    padding:
+        15px 16px;
+
+    border-width: 1px;
+
+}
+
+
+.promocion-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.promocion-titulo i {
+
+    color:
+        var(--color-principal);
+
+}
+
+
+.promocion-titulo h3 {
+
+    margin: 0;
+
+    color:
+        var(--color-principal);
+
+    font-size: 15px;
+
+}
+
+
+#promocion-descripcion {
+
+    margin:
+        9px 0 0;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-size: 13.5px;
+
+    line-height: 1.5;
+
+}
+
+
+.promocion-vigencia {
+
+    margin:
+        6px 0 0;
+
+    color:
+        rgba(255, 255, 255, 0.58);
+
+    font-size: 12px;
+
+}
+
+
+.promocion-whatsapp {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 13px;
+
+    padding: 11px 14px;
+
+    border-radius: 12px;
+
+    background-color:
+        var(--color-principal);
+
+    color:
+        #09121F;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+
+}
+
+
+.promocion-whatsapp:hover {
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.08);
+
+}
+
+
+
+/* ==============================
+   CARRUSEL
+============================== */
+
+#galeria-negocio {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    margin:
+        25px auto 0;
+
+}
+
+
+.carrusel {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(232, 139, 24, 0.25);
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--color-principal) 25%,
+            transparent
+        );
+
     border-radius: 18px;
 
-    display: block;
-    margin: 25px auto 0;
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.14);
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+    touch-action:
+        pan-y;
+
 }
+
+
+.carrusel-pista {
+
+    display: flex;
+
+    width: 100%;
+
+    transition:
+        transform
+        0.55s
+        cubic-bezier(
+            0.4,
+            0,
+            0.2,
+            1
+        );
+
+}
+
+
+.carrusel-slide {
+
+    min-width: 100%;
+
+    width: 100%;
+
+    height: 250px;
+
+    flex-shrink: 0;
+
+}
+
+
+.carrusel-slide img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+
+/* ==============================
+   CONTROLES DEL CARRUSEL
+============================== */
+
+.carrusel-control {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 34px;
+
+    height: 34px;
+
+    padding: 0;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 50%;
+
+    background-color:
+        rgba(9, 18, 31, 0.72);
+
+    color:
+        #FFFFFF;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.carrusel-control:hover {
+
+    background-color:
+        rgba(9, 18, 31, 0.90);
+
+}
+
+
+.carrusel-anterior {
+
+    left: 10px;
+
+}
+
+
+.carrusel-siguiente {
+
+    right: 10px;
+
+}
+
+
+
+/* ==============================
+   INDICADORES DEL CARRUSEL
+============================== */
+
+.carrusel-indicadores {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 10px;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    gap: 7px;
+
+    z-index: 2;
+
+}
+
+
+.carrusel-indicador {
+
+    appearance: none;
+
+    width: 7px;
+
+    height: 7px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color:
+        rgba(255, 255, 255, 0.55);
+
+    cursor: pointer;
+
+    transition:
+        width 0.2s ease,
+        background-color 0.2s ease;
+
+}
+
+
+.carrusel-indicador.activo {
+
+    width: 19px;
+
+    border-radius: 8px;
+
+    background-color:
+        var(--color-principal);
+
+}
+
+
+
+/* ==============================
+   BOTONES PRINCIPALES
+============================== */
 
 main {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 15px;
+
 }
 
+
 .boton {
-    border: 1.5px solid var(--color-principal);
+
+    border:
+        1.5px solid
+        var(--color-principal);
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 12px;
 
     width: 100%;
+
     padding: 16px;
 
-    background-color: var(--color-botones);
+    background-color:
+        var(--color-botones);
+
     color: #09121F;
 
     text-decoration: none;
@@ -204,168 +1125,374 @@ main {
     border-radius: 18px;
 
     font-size: 17px;
+
     font-weight: bold;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.18);
 
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
-        background-color 0.2s ease;
+        filter 0.2s ease;
+
 }
+
 
 .boton:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-    background-color: #F29A2E;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(0, 0, 0, 0.25);
+
+    filter:
+        brightness(1.08);
+
 }
+
 
 .boton:active {
-    transform: scale(0.98);
+
+    transform:
+        scale(0.98);
+
 }
+
 
 .boton i {
+
     color: #09121F;
+
     font-size: 21px;
+
     width: auto;
+
     text-align: center;
+
     flex-shrink: 0;
-    transition: transform 0.2s ease;
+
+    transition:
+        transform 0.2s ease;
+
 }
+
 
 .boton:hover i {
-    transform: scale(1.15);
+
+    transform:
+        scale(1.15);
+
 }
 
-footer {
-    text-align: center;
-    margin-top: 35px;
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 12px;
-    letter-spacing: 0.5px;
+
+
+/* ==============================
+   ACCESIBILIDAD
+============================== */
+
+.boton:focus-visible,
+.servicio:focus-visible,
+.boton-promocion:focus-visible,
+.promocion-whatsapp:focus-visible,
+.carrusel-control:focus-visible,
+.carrusel-indicador:focus-visible {
+
+    outline:
+        2px solid
+        #FFFFFF;
+
+    outline-offset:
+        3px;
+
 }
+
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 35px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+
+/* ==============================
+   ANIMACIONES
+============================== */
 
 @keyframes pulsoEstado {
 
     0% {
-        box-shadow: 0 0 0 0 rgba(101, 201, 122, 0.6);
+
+        box-shadow:
+            0 0 0 0
+            rgba(101, 201, 122, 0.6);
+
     }
 
     70% {
-        box-shadow: 0 0 0 7px rgba(101, 201, 122, 0);
+
+        box-shadow:
+            0 0 0 7px
+            rgba(101, 201, 122, 0);
+
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(101, 201, 122, 0);
+
+        box-shadow:
+            0 0 0 0
+            rgba(101, 201, 122, 0);
+
     }
+
 }
 
+
 @keyframes aparecerSuave {
+
     from {
+
         opacity: 0;
-        transform: translateY(18px);
+
+        transform:
+            translateY(18px);
+
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
+
 }
+
 
 .logo,
 #nombre-negocio,
 #descripcion-negocio,
 #estado-negocio,
-#horario-negocio,
+#seccion-horarios,
 #seccion-servicios,
-#imagen-negocio,
+#galeria-negocio,
 main,
 footer {
+
     opacity: 0;
-    animation: aparecerSuave 0.6s ease forwards;
+
+    animation:
+        aparecerSuave
+        0.6s
+        ease
+        forwards;
+
 }
+
 
 .logo {
     animation-delay: 0.05s;
 }
 
+
 #nombre-negocio {
     animation-delay: 0.12s;
 }
+
 
 #descripcion-negocio {
     animation-delay: 0.18s;
 }
 
+
 #estado-negocio {
     animation-delay: 0.24s;
 }
 
-#horario-negocio {
+
+#seccion-horarios {
     animation-delay: 0.30s;
 }
+
 
 #seccion-servicios {
     animation-delay: 0.36s;
 }
 
-#imagen-negocio {
+
+#galeria-negocio {
     animation-delay: 0.42s;
 }
+
 
 main {
     animation-delay: 0.48s;
 }
 
+
 footer {
     animation-delay: 0.55s;
 }
 
-@media (prefers-reduced-motion: reduce) {
+
+
+/* ==============================
+   MOVIMIENTO REDUCIDO
+============================== */
+
+@media
+(prefers-reduced-motion: reduce) {
 
     .logo,
     #nombre-negocio,
     #descripcion-negocio,
     #estado-negocio,
-    #horario-negocio,
+    #seccion-horarios,
     #seccion-servicios,
-    #imagen-negocio,
+    #galeria-negocio,
     main,
     footer {
+
         opacity: 1;
+
         animation: none;
+
     }
+
+
+    .carrusel-pista,
+    .servicio,
+    .detalle-desplegable,
+    .detalle-promocion,
+    .boton,
+    .boton-promocion {
+
+        transition: none;
+
+    }
+
 }
 
-@media (max-width: 480px) {
+
+
+/* ==============================
+   CELULAR
+============================== */
+
+@media
+(max-width: 480px) {
 
     .contenedor {
-        padding: 20px 15px;
+
+        padding:
+            20px 15px;
+
     }
+
 
     h1 {
+
         font-size: 26px;
+
     }
 
-    header p {
+
+    header > p {
+
         font-size: 15px;
+
     }
+
 
     .logo img {
+
         width: 85px;
+
         height: 85px;
+
     }
 
-    #imagen-negocio {
+
+    .carrusel-slide {
+
         height: 180px;
+
     }
+
 
     .boton {
+
         padding: 15px;
+
         font-size: 16px;
+
     }
 
-    #lista-servicios {
-    grid-template-columns: 1fr;
+
+    .carrusel-control {
+
+        width: 32px;
+
+        height: 32px;
+
+    }
+
 }
+
+
+
+/* ==============================
+   PANTALLAS MUY ANGOSTAS
+============================== */
+
+@media
+(max-width: 360px) {
+
+    #lista-servicios {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    #horario-negocio {
+
+        padding:
+            14px 10px;
+
+    }
+
+
+    #horario-negocio p {
+
+        grid-template-columns:
+            90px 135px;
+
+        column-gap: 6px;
+
+        font-size: 13px;
+
+    }
+
 }

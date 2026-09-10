@@ -2,93 +2,435 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#09121F"
+    >
+
+    <meta
+        name="description"
+        content="Daytona Morelia - Información, servicios, horarios y contacto."
+    >
 
     <title>Daytona Morelia</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
 </head>
 
 <body>
 
-    <div class="contenedor">
+<div class="contenedor">
 
-        <header>
 
-            <div class="logo">
-                <img id="logo-negocio" src="Logo.png" alt="Logo">
-            </div>
+    <!-- ==============================
+         ENCABEZADO
+    ============================== -->
 
-            <h1 id="nombre-negocio">Daytona Morelia</h1>
+    <header>
 
-<p id="descripcion-negocio">
-    Todo para tu vehículo automotor.
-</p>
 
-            <div id="estado-negocio"></div>
+        <div class="logo">
+
+            <img
+                id="logo-negocio"
+                src="Logo.png"
+                alt="Logo de Daytona Morelia"
+            >
+
+        </div>
+
+
+        <h1 id="nombre-negocio">
+            Daytona Morelia
+        </h1>
+
+
+        <p id="descripcion-negocio">
+            Todo para tu vehículo automotor.
+        </p>
+
+
+        <div id="estado-negocio"></div>
+
+
+
+        <!-- ==============================
+             HORARIOS
+        ============================== -->
+
+        <section id="seccion-horarios">
+
+
+            <h2>
+                Horarios
+            </h2>
+
 
             <div id="horario-negocio">
-    <p><strong>Lunes:</strong> <span id="lunes"></span></p>
-    <p><strong>Martes:</strong> <span id="martes"></span></p>
-    <p><strong>Miércoles:</strong> <span id="miercoles"></span></p>
-    <p><strong>Jueves:</strong> <span id="jueves"></span></p>
-    <p><strong>Viernes:</strong> <span id="viernes"></span></p>
-    <p><strong>Sábado:</strong> <span id="sabado"></span></p>
-    <p><strong>Domingo:</strong> <span id="domingo"></span></p>
+
+                <p>
+                    <strong>Lunes:</strong>
+                    <span id="lunes"></span>
+                </p>
+
+                <p>
+                    <strong>Martes:</strong>
+                    <span id="martes"></span>
+                </p>
+
+                <p>
+                    <strong>Miércoles:</strong>
+                    <span id="miercoles"></span>
+                </p>
+
+                <p>
+                    <strong>Jueves:</strong>
+                    <span id="jueves"></span>
+                </p>
+
+                <p>
+                    <strong>Viernes:</strong>
+                    <span id="viernes"></span>
+                </p>
+
+                <p>
+                    <strong>Sábado:</strong>
+                    <span id="sabado"></span>
+                </p>
+
+                <p>
+                    <strong>Domingo:</strong>
+                    <span id="domingo"></span>
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==============================
+             SERVICIOS
+        ============================== -->
+
+        <section id="seccion-servicios">
+
+
+            <h2>
+                Servicios
+            </h2>
+
+
+            <div id="lista-servicios"></div>
+
+
+
+            <!-- DETALLE DEL SERVICIO -->
+
+            <div
+                id="detalle-servicio"
+                class="detalle-desplegable"
+                aria-hidden="true"
+            >
+
+                <h3 id="detalle-servicio-titulo"></h3>
+
+                <p id="detalle-servicio-texto"></p>
+
+            </div>
+
+
+
+            <!-- ==============================
+                 PROMOCIÓN
+            ============================== -->
+
+            <button
+                id="boton-promocion"
+                class="boton-promocion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="detalle-promocion"
+                hidden
+            >
+
+                <span class="promocion-contenido">
+
+                    <i class="fa-solid fa-tag"></i>
+
+                    <span id="texto-boton-promocion">
+                        Ver promoción
+                    </span>
+
+                </span>
+
+
+                <i
+                    class="fa-solid fa-chevron-down promocion-flecha"
+                ></i>
+
+
+            </button>
+
+
+
+            <div
+                id="detalle-promocion"
+                class="detalle-promocion"
+                aria-hidden="true"
+            >
+
+
+                <div class="promocion-titulo">
+
+                    <i class="fa-solid fa-tag"></i>
+
+                    <h3 id="promocion-titulo"></h3>
+
+                </div>
+
+
+                <p id="promocion-descripcion"></p>
+
+
+                <p
+                    id="promocion-vigencia"
+                    class="promocion-vigencia"
+                ></p>
+
+
+                <a
+                    id="boton-promocion-whatsapp"
+                    class="promocion-whatsapp"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    <span>
+                        Solicitar promoción
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==============================
+             CARRUSEL
+        ============================== -->
+
+        <section
+            id="galeria-negocio"
+            aria-label="Galería de Daytona Morelia"
+        >
+
+
+            <div
+                id="carrusel"
+                class="carrusel"
+            >
+
+
+                <div
+                    id="carrusel-pista"
+                    class="carrusel-pista"
+                ></div>
+
+
+
+                <button
+                    id="carrusel-anterior"
+                    class="carrusel-control carrusel-anterior"
+                    type="button"
+                    aria-label="Fotografía anterior"
+                >
+
+                    <i class="fa-solid fa-chevron-left"></i>
+
+                </button>
+
+
+
+                <button
+                    id="carrusel-siguiente"
+                    class="carrusel-control carrusel-siguiente"
+                    type="button"
+                    aria-label="Fotografía siguiente"
+                >
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+
+                <div
+                    id="carrusel-indicadores"
+                    class="carrusel-indicadores"
+                    aria-label="Seleccionar fotografía"
+                ></div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </header>
+
+
+
+    <!-- ==============================
+         BOTONES PRINCIPALES
+    ============================== -->
+
+    <main>
+
+
+        <a
+            id="boton-whatsapp"
+            href="#"
+            class="boton"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            <span>WhatsApp</span>
+
+        </a>
+
+
+
+        <a
+            id="boton-llamar"
+            href="#"
+            class="boton"
+        >
+
+            <i class="fa-solid fa-phone"></i>
+
+            <span>Llamar</span>
+
+        </a>
+
+
+
+        <a
+            id="boton-maps"
+            href="#"
+            class="boton"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <span>Cómo llegar</span>
+
+        </a>
+
+
+
+        <a
+            id="boton-instagram"
+            href="#"
+            class="boton"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <i class="fa-brands fa-instagram"></i>
+
+            <span>Instagram</span>
+
+        </a>
+
+
+
+        <a
+            id="boton-facebook"
+            href="#"
+            class="boton"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <i class="fa-brands fa-facebook-f"></i>
+
+            <span>Facebook</span>
+
+        </a>
+
+
+
+        <a
+            id="boton-resenas"
+            href="#"
+            class="boton"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <i class="fa-solid fa-star"></i>
+
+            <span>Déjanos una reseña</span>
+
+        </a>
+
+
+    </main>
+
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        <p>
+            Creado por EFITEM
+        </p>
+
+    </footer>
+
+
 </div>
 
-<section id="seccion-servicios">
 
-    <h2>Servicios</h2>
+<script src="datos.js"></script>
 
-    <div id="lista-servicios"></div>
+<script src="script.js"></script>
 
-</section>
-
-<img id="imagen-negocio" src="foto.jpg" alt="Daytona Morelia">
-
-        </header>
-
-        <main>
-
-            <a id="boton-whatsapp" href="#" class="boton" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-whatsapp"></i>
-    <span>WhatsApp</span>
-</a>
-
-<a id="boton-llamar" href="#" class="boton">
-        <i class="fa-solid fa-phone"></i>
-        <span>Llamar</span>
-    </a>
-
-<a id="boton-maps" href="#" class="boton" target="_blank" rel="noopener noreferrer">
-    <i class="fa-solid fa-location-dot"></i>
-    <span>Cómo llegar</span>
-</a>
-
-<a id="boton-instagram" href="#" class="boton" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-instagram"></i>
-    <span>Instagram</span>
-</a>
-
-<a id="boton-resenas" href="#" class="boton" target="_blank" rel="noopener noreferrer">
-    <i class="fa-solid fa-star"></i>
-    <span>Déjanos una reseña</span>
-</a>
-
-        </main>
-
-        <footer>
-            <p>Creado por EFITEM</p>
-        </footer>
-
-    </div>
-
-    <script src="datos.js"></script>
-    <script src="script.js"></script>
 
 </body>
 
