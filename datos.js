@@ -67,7 +67,7 @@ const negocio = {
             "Consulta disponibilidad y condiciones.",
 
         mensajeWhatsapp:
-            "Hola, vi la promoción en la página de Daytona Morelia y quisiera conocer los detalles."
+            "Hola, me gustaría obtener información de la promoción vigente."
 
     },
 
